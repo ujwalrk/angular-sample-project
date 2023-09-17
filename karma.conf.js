@@ -1,8 +1,16 @@
-//jshint strict: false
 module.exports = function(config) {
   config.set({
 
     basePath: './app',
+
+    customLaunchers: {
+     ChromeHeadlessNoSandbox: {
+         base: 'ChromeHeadless',
+         flags: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox']
+     }
+    },
 
     files: [
       'lib/angular/angular.js',
@@ -16,7 +24,9 @@ module.exports = function(config) {
 
     frameworks: ['jasmine'],
 
-    browsers: ['Chrome'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+
+    singleRun: true,
 
     plugins: [
       'karma-chrome-launcher',
