@@ -12,5 +12,10 @@ pipeline {
 		sh 'docker run --rm angular-test'
             }
         }
+	stage('Run') {
+            steps {
+                sh 'npm start &'
+            }
+        }
     }
 }
