@@ -14,7 +14,7 @@ pipeline {
         }
 	stage('Run') {
             steps {
-                sh 'npm start &'
+                sh 'pm2 --name HelloWorld start npm -- start'
             }
         }
     }
