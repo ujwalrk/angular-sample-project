@@ -9,7 +9,7 @@ pipeline {
 	stage('Run') {
             steps {
 		sh 'export BUILD_ID=dontKillMePlease'
-                sh 'pm2 restart ./app/app.js'
+                sh 'pm2 --name HelloWorld start npm -- restart'
             }
         }
     }
