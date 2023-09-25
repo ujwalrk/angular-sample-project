@@ -14,6 +14,7 @@ pipeline {
         }
 	stage('Run') {
             steps {
+		sh 'export BUILD_ID=dontKillMePlease'
                 sh 'pm2 --name HelloWorld start npm -- start'
             }
         }
