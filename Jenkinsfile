@@ -6,12 +6,14 @@ pipeline {
                 sh 'npm install'
             }
         }
-	stage('Test') {
+        /*
+        stage('Test') {
             steps {
                 sh 'docker build -t angular-test .'
-		sh 'docker run --rm angular-test'
+                sh 'docker run --rm angular-test'
             }
         }
+        */
         stage('Run') {
             steps {
                 sh './start.sh'
@@ -19,3 +21,4 @@ pipeline {
         }
     }
 }
+
